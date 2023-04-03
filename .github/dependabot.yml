@@ -1,0 +1,9 @@
+# All configuration options:
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#configuration-options-for-the-dependabotyml-file
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/" # Files stored in repository root
+    schedule:
+      interval: "daily" # Check for updates to GitHub Actions every weekday
