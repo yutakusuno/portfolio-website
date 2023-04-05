@@ -1,17 +1,17 @@
 "use client";
 
-import { Box, Text, Flex, Link, Stack, Button } from "@chakra-ui/react";
+import { Box, Text, Flex, Stack, Button } from "@chakra-ui/react";
 import NextLink from "next/link";
 
-type LinkItemProps = {
+type LinkItem = {
   name: string;
   path: string;
 };
 
-const LinkItems: Array<LinkItemProps> = [
+const linkItems: Array<LinkItem> = [
   { name: "Home", path: "/" },
-  { name: "Projects", path: "/" },
-  { name: "Experience", path: "/" },
+  { name: "Projects", path: "/projects" },
+  { name: "Experience", path: "/experience" },
 ];
 
 export default function Nav() {
@@ -22,7 +22,7 @@ export default function Nav() {
           <Text fontSize="xl">Yuta Kusuno</Text>
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={0}>
-              {LinkItems.map((item, idx) => (
+              {linkItems.map((item, idx) => (
                 <Button
                   as={NextLink}
                   key={idx}
