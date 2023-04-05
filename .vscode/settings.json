@@ -1,4 +1,10 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  // Use in https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf
+  "markdown-pdf.displayHeaderFooter": false,
+  "markdown-pdf.margin.bottom": "1cm",
+  "markdown-pdf.margin.left": "0.5cm",
+  "markdown-pdf.margin.right": "0.5cm",
+  "markdown-pdf.margin.top": "1cm"
 }
