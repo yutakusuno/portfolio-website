@@ -59,7 +59,7 @@ const Home = () => {
       <Center h="20px" />
       <SimpleGrid>
         <Button
-          href="./resume.html"
+          href="https://yutakusuno.com/resume.html"
           target="_blank"
           as={NextLink}
           leftIcon={<Icon as={FaFileDownload} w={6} h={6} />}
