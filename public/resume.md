@@ -18,7 +18,7 @@ Vancouver, CA |
 <h2><b><u>Summary</u></b></h2>
 
 <div style="font-size: 16px;">
-Intellectually curious Full-Stack Software Developer with 3+ years of experience in developing web applications. Intellectually curious Full-Stack Software Developer with 3+ years of experience in developing web applications. Experienced in working with a startup company across multiple projects and quickly learning makes the company grow and succeed. Able to work independently of remote locations or in office environments as needed by the company.
+Intellectually curious Full-Stack Software Developer with 3+ years of experience in developing web applications. Experienced in working with a startup company across multiple projects and quickly learning makes the company grow and succeed. Able to work independently of remote locations or in office environments as needed by the company.
 </div>
 
 <h2><b><u>Skills</u></b></h2>

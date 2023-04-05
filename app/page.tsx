@@ -1,6 +1,6 @@
 "use client";
 
-import { about, avatar, name } from "../lib/info";
+import { about, avatar, name } from "../lib/home";
 import {
   Button,
   Container,
@@ -59,7 +59,7 @@ const Home = () => {
       <Center h="20px" />
       <SimpleGrid>
         <Button
-          href="https://yutakusuno.com/resume.html"
+          href="./resume.html"
           target="_blank"
           as={NextLink}
           leftIcon={<Icon as={FaFileDownload} w={6} h={6} />}
