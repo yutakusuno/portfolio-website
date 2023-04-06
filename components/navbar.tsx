@@ -1,7 +1,18 @@
 "use client";
 
-import { Box, Text, Flex, Stack, Button } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  Flex,
+  Stack,
+  Button,
+  useColorMode,
+  ButtonGroup,
+  Divider,
+} from "@chakra-ui/react";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
+import { useEffect } from "react";
 
 type LinkItem = {
   name: string;
@@ -9,38 +20,52 @@ type LinkItem = {
 };
 
 const linkItems: Array<LinkItem> = [
-  { name: "Home", path: "/" },
+  { name: "About", path: "/" },
   { name: "Projects", path: "/projects" },
   { name: "Blog", path: "/blog" },
 ];
 
-export default function Nav() {
+const Navbar = (props: { theme: string }) => {
+  const { theme } = props;
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  useEffect(() => {
+    // NOTE: This is a hack to adjust theme between Chakra UI and next-themes
+    // If the default theme set dark with Chakra UI, color Mode Flash Issue is occurred https://chakra-ui.com/docs/styled-system/color-mode#color-mode-flash-issue
+    if (colorMode !== theme) toggleColorMode();
+  }, [theme]);
+
   return (
     <>
-      <Box bg="#242424" px={4}>
+      <Box px={3}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <Text fontSize="xl">Yuta Kusuno</Text>
+          <Text>Yuta Kusuno</Text>
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={0}>
-              {linkItems.map((item, idx) => (
-                <Button
-                  as={NextLink}
-                  key={idx}
-                  px={2}
-                  py={1}
-                  size="md"
-                  variant="ghost"
-                  rounded={"md"}
-                  href={item.path}
-                  _hover={{ background: "white", color: "#404040" }}
-                >
-                  {item.name}
+              <ButtonGroup>
+                {linkItems.map((item, idx) => (
+                  <Button
+                    key={idx}
+                    href={item.path}
+                    as={NextLink}
+                    variant="ghost"
+                    rounded={"md"}
+                    size="sm"
+                  >
+                    {item.name}
+                  </Button>
+                ))}
+                <Button variant="ghost" onClick={toggleColorMode}>
+                  {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
                 </Button>
-              ))}
+              </ButtonGroup>
             </Stack>
           </Flex>
         </Flex>
       </Box>
+      <Divider />
     </>
   );
-}
+};
+
+export default Navbar;

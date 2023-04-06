@@ -43,11 +43,13 @@ Intellectually curious Full-Stack Software Developer with 3+ years of experience
 <div style="text-align: right;">Tokushima, Japan</div>
 <ul>
 
-<li>Created new taxi experience by complex fare calculation of each company and determining the fare before calling a taxi.</li>
-<li>Increased service stability by implementing a call center function using Vonage API to build redundant configurations with an existing call center function using Twilio API.</li>
+Introduced a function to calculate fares from each client's fare table
+
+<li>Created new taxi experience by calculating fares from each clients fare table by evaluating map data such as traveling routes and polygons, calculating traveling time and traveling locations before calling a taxi.</li>
+<li>Worked on developing a call center function using a CPaaS API, WebRTC and WebSocket to build redundant configurations with an existing call center function.</li>
 <li>Reduced development and operating costs use for demonstration experiments by one-tenth by integrating apps on a single server, and using multiple domains on it.</li>
 <li>Improved Nginx log collection performance by reducing the total number of query calls between AWS Lambda and OpenSearch and excluding unnecessary logs.</li>
-<li><b>Leveraged knowledge</b> in Git, programmed in Ruby(Rails), Javascript, Typescript, ReactJS, and debugged using Linux commands(tail, less, grep), Chrome Developer Tools.</li>
+<li><b>Leveraged knowledge</b> in Git, programmed in Ruby(Rails), Javascript, Typescript, ReactJS, and debugged using Linux commands(tail, less, grep, awk), Chrome Developer Tools.</li>
 </ul>
 </div>
 
