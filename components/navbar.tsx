@@ -11,7 +11,7 @@ type LinkItem = {
 const linkItems: Array<LinkItem> = [
   { name: "Home", path: "/" },
   { name: "Projects", path: "/projects" },
-  { name: "Experience", path: "/experience" },
+  { name: "Blog", path: "/blog" },
 ];
 
 export default function Nav() {
