@@ -2,13 +2,13 @@
 
 import {
   Box,
-  Text,
   Flex,
-  Stack,
   Button,
   useColorMode,
   ButtonGroup,
   Divider,
+  Heading,
+  Spacer,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
@@ -33,36 +33,27 @@ const Navbar = (props: { theme: string }) => {
     // NOTE: This is a hack to adjust theme between Chakra UI and next-themes
     // If the default theme set dark with Chakra UI, color Mode Flash Issue is occurred https://chakra-ui.com/docs/styled-system/color-mode#color-mode-flash-issue
     if (colorMode !== theme) toggleColorMode();
-  }, [theme]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
-      <Box px={3}>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <Text>Yuta Kusuno</Text>
-          <Flex alignItems={"center"}>
-            <Stack direction={"row"} spacing={0}>
-              <ButtonGroup>
-                {linkItems.map((item, idx) => (
-                  <Button
-                    key={idx}
-                    href={item.path}
-                    as={NextLink}
-                    variant="ghost"
-                    rounded={"md"}
-                    size="sm"
-                  >
-                    {item.name}
-                  </Button>
-                ))}
-                <Button variant="ghost" onClick={toggleColorMode}>
-                  {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-                </Button>
-              </ButtonGroup>
-            </Stack>
-          </Flex>
-        </Flex>
-      </Box>
+      <Flex minWidth="max-content" alignItems="center" gap={2} p={3}>
+        <Box>
+          <Heading size="sm">Yuta Kusuno</Heading>
+        </Box>
+        <Spacer />
+        <ButtonGroup rounded={"md"} variant="ghost" size="sm">
+          {linkItems.map((item, idx) => (
+            <Button key={idx} href={item.path} as={NextLink}>
+              {item.name}
+            </Button>
+          ))}
+          <Button onClick={toggleColorMode}>
+            {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+          </Button>
+        </ButtonGroup>
+      </Flex>
       <Divider />
     </>
   );
