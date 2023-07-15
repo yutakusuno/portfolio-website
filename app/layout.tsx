@@ -1,13 +1,5 @@
-"use client";
-
-import { CacheProvider } from "@chakra-ui/next-js";
-import { ChakraProvider } from "@chakra-ui/react";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
-import { ThemeProvider as NextThemeProvider } from "next-themes";
+import CustomProviders from "../components/customProviders";
 import "./globals.css";
-
-const theme = "dark";
 
 export default function RootLayout({
   children,
@@ -20,15 +12,7 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <head />
       <body>
-        <CacheProvider>
-          <NextThemeProvider forcedTheme={theme}>
-            <ChakraProvider>
-              <Navbar theme={theme} />
-              {children}
-              <Footer />
-            </ChakraProvider>
-          </NextThemeProvider>
-        </CacheProvider>
+        <CustomProviders>{children}</CustomProviders>
       </body>
     </html>
   );

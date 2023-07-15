@@ -1,5 +1,4 @@
-"use client";
-
+import { useEffect } from "react";
 import {
   Box,
   Flex,
@@ -12,14 +11,13 @@ import {
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
-import { useEffect } from "react";
 
-type LinkItem = {
+type PageList = {
   name: string;
   path: string;
 };
 
-const linkItems: Array<LinkItem> = [
+const pageList: Array<PageList> = [
   { name: "About", path: "/" },
   { name: "Projects", path: "/projects" },
   { name: "Blog", path: "/blog" },
@@ -44,7 +42,7 @@ const Navbar = (props: { theme: string }) => {
         </Box>
         <Spacer />
         <ButtonGroup rounded={"md"} variant="ghost" size="sm">
-          {linkItems.map((item, idx) => (
+          {pageList.map((item, idx) => (
             <Button key={idx} href={item.path} as={NextLink}>
               {item.name}
             </Button>
