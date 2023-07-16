@@ -35,11 +35,23 @@ const Navbar = (props: { theme: string }) => {
 
   return (
     <>
-      <Flex minWidth="max-content" alignItems="center" gap={2} p={3}>
+      <Flex
+        alignItems="center"
+        justifyContent="space-between"
+        gap={2}
+        p={3}
+        // To apply backdropBlur, set backdropFilter prop value to "auto"
+        backdropFilter="auto"
+        backdropBlur="sm"
+        zIndex="sticky"
+        sx={{
+          position: "sticky",
+          top: "0",
+        }}
+      >
         <Box>
           <Heading size="sm">Yuta Kusuno</Heading>
         </Box>
-        <Spacer />
         <ButtonGroup rounded={"md"} variant="ghost" size="sm">
           {pageList.map((item, idx) => (
             <Button key={idx} href={item.path} as={NextLink}>
@@ -51,7 +63,6 @@ const Navbar = (props: { theme: string }) => {
           </Button>
         </ButtonGroup>
       </Flex>
-      <Divider />
     </>
   );
 };
