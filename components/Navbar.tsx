@@ -19,7 +19,6 @@ type PageList = {
 
 const pageList: Array<PageList> = [
   { name: "About", path: "/" },
-  { name: "Projects", path: "/projects" },
   { name: "Blog", path: "/blog" },
 ];
 

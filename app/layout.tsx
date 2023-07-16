@@ -1,5 +1,7 @@
-import CustomProviders from "../components/customProviders";
+import CustomProviders from "../components/CustomProviders";
 import "./globals.css";
+
+const theme = "dark";
 
 export default function RootLayout({
   children,
@@ -12,7 +14,7 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <head />
       <body>
-        <CustomProviders>{children}</CustomProviders>
+        <CustomProviders theme={theme}>{children}</CustomProviders>
       </body>
     </html>
   );
