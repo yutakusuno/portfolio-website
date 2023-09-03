@@ -16,3 +16,8 @@ img {
   max-width: 100%;
   display: block;
 }
+
+.notion-collection-row,
+.notion-collection-page-properties {
+  display: none;
+}
