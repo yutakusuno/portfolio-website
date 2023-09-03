@@ -18,7 +18,10 @@ export default function usePosts(allPosts: Post[]) {
           return false;
         }
 
-        if (query) {
+        if (
+          query &&
+          post.title.toLowerCase().indexOf(query.toLowerCase()) === -1
+        ) {
           return false;
         }
 
