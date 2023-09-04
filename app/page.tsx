@@ -1,13 +1,15 @@
-import { NotionPage } from "../components/NotionPage";
-import { rootNotionPageId } from "../lib/config";
-import notion from "../lib/notion";
+import { NotionProfilePage } from "../components/NotionPage";
+import { notionProfilePageId } from "../lib/config";
+import { notion } from "../lib/notion";
 
 const About = async () => {
-  if (!rootNotionPageId) return null;
+  if (!notionProfilePageId) return null;
 
-  const recordMap = await notion.getPage(rootNotionPageId);
+  const recordMap = await notion.getPage(notionProfilePageId);
 
-  return <NotionPage recordMap={recordMap} rootPageId={rootNotionPageId} />;
+  return (
+    <NotionProfilePage recordMap={recordMap} rootPageId={notionProfilePageId} />
+  );
 };
 
 export default About;
