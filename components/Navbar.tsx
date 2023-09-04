@@ -48,7 +48,7 @@ const Navbar = (props: { theme: string }) => {
           top: "0",
         }}
       >
-        <Box>
+        <Box as={NextLink} href="/">
           <Heading size="sm">Yuta Kusuno</Heading>
         </Box>
         <ButtonGroup rounded={"md"} variant="ghost" size="sm">

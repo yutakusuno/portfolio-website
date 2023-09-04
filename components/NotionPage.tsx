@@ -1,6 +1,6 @@
 "use client";
 
-import { useColorMode } from "@chakra-ui/react";
+import { Flex, Text, useColorMode } from "@chakra-ui/react";
 import { NotionRenderer } from "react-notion-x";
 import { ExtendedRecordMap } from "notion-types";
 import "react-notion-x/src/styles.css";
@@ -52,7 +52,14 @@ export const NotionPage = ({
         darkMode={colorMode === "dark"}
         fullPage
         disableHeader
-        pageHeader={<CategoryList categories={post.categories} />}
+        pageHeader={
+          <Flex>
+            <Text fontSize="xs" pr={2}>
+              Posted on {post.date}
+            </Text>
+            <CategoryList categories={post.categories} />
+          </Flex>
+        }
         components={{
           Code,
           Collection,

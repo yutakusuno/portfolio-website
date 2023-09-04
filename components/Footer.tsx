@@ -1,17 +1,18 @@
-import { Container, Divider, Link } from "@chakra-ui/react";
+import { Box, Text, Container, Divider } from "@chakra-ui/react";
+import NextLink from "next/link";
 
 const Footer = () => {
   return (
     <>
       <Divider />
       <Container centerContent p={4}>
-        <Link
+        <Box
+          as={NextLink}
           href="https://github.com/yutakusuno/portfolio-website"
-          fontSize="sm"
-          isExternal
+          target="_blank"
         >
-          ©2023 Yuta Kusuno - Build with Next.js & Notion
-        </Link>
+          <Text size="sm">©2023 Yuta Kusuno - Build with Next.js & Notion</Text>
+        </Box>
       </Container>
     </>
   );

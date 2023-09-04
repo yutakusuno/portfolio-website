@@ -19,7 +19,7 @@ const CustomProviders = (props: {
         <ChakraProvider>
           <NextThemeProvider attribute="class" defaultTheme={theme}>
             <Navbar theme={theme} />
-            <Container>{children}</Container>
+            <Container minHeight="calc(100vh - 3.5em);">{children}</Container>
             <Footer />
           </NextThemeProvider>
         </ChakraProvider>
