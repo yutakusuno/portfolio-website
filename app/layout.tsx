@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import CustomProviders from "../components/CustomProviders";
 import "./globals.css";
 
@@ -15,6 +16,7 @@ export default function RootLayout({
       <head />
       <body>
         <CustomProviders theme={theme}>{children}</CustomProviders>
+        <Analytics />
       </body>
     </html>
   );
