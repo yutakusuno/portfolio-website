@@ -49,7 +49,7 @@ const Navbar = (props: { theme: string }) => {
         }}
       >
         <Box as={NextLink} href="/">
-          <Heading size="sm">Yuta Kusuno</Heading>
+          <Heading size="sm">yutakusuno.com</Heading>
         </Box>
         <ButtonGroup rounded={"md"} variant="ghost" size="sm">
           {pageList.map((item, idx) => (
