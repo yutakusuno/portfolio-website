@@ -6,4 +6,4 @@ updates:
   - package-ecosystem: "npm"
     directory: "/" # Files stored in repository root
     schedule:
-      interval: "daily" # Check for updates to GitHub Actions every weekday
+      interval: "weekly"
