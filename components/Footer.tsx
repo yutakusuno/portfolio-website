@@ -3,20 +3,17 @@ import NextLink from "next/link";
 
 const Footer = () => {
   return (
-    <>
-      <Divider />
-      <Container centerContent p={4}>
-        <Box
-          as={NextLink}
-          href="https://github.com/yutakusuno/portfolio-website"
-          target="_blank"
-        >
-          <Text size="sm">
-            ©2023 Yuta Kusuno - Build with Next.js & Notion API
-          </Text>
-        </Box>
-      </Container>
-    </>
+    <Container centerContent p={4}>
+      <Box
+        as={NextLink}
+        href="https://github.com/yutakusuno/portfolio-website"
+        target="_blank"
+      >
+        <Text size="sm">
+          ©2023 Yuta Kusuno - Build with Next.js & Notion API
+        </Text>
+      </Box>
+    </Container>
   );
 };
 

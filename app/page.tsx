@@ -1,15 +1,30 @@
-import { NotionProfilePage } from "../components/NotionPage";
-import { notionProfilePageId } from "../lib/config";
-import { notion } from "../lib/notion";
+import type { NextPage } from "next";
+import Head from "next/head";
 
-const About = async () => {
-  if (!notionProfilePageId) return null;
+import About from "../components/about";
+import Projects from "../components/projects";
+import Experience from "../components/experience";
 
-  const recordMap = await notion.getPage(notionProfilePageId);
-
+const Home: NextPage = () => {
   return (
-    <NotionProfilePage recordMap={recordMap} rootPageId={notionProfilePageId} />
+    <>
+      <Head>
+        <title>Yuta Kusuno Portfolio</title>
+      </Head>
+      <section id="about">
+        <About />
+      </section>
+      <section id="experience">
+        <Experience />
+      </section>
+      {/* <section id="skills">
+        <Skills />
+      </section> */}
+      <section id="projects">
+        <Projects />
+      </section>
+    </>
   );
 };
 
-export default About;
+export default Home;

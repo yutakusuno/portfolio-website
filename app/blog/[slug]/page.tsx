@@ -1,11 +1,10 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { NotionPage } from "../../../components/NotionPage";
-import RelatedPosts from "../../../components/posts/RelatedPosts";
 import { getRecordMap } from "../../../lib/notion";
 import { getAllPostsFromNotion } from "../../../lib/posts";
 import { Post } from "../../../types/post";
+import { PostPageContainer } from "../../../components/posts/custom-container";
 
 export default async function PostPage({
   params: { slug },
@@ -41,10 +40,11 @@ export default async function PostPage({
   const recordMap = await getRecordMap(post.id);
 
   return (
-    <>
-      <NotionPage post={post} recordMap={recordMap} />
-      <RelatedPosts posts={relatedPosts} />
-    </>
+    <PostPageContainer
+      post={post}
+      recordMap={recordMap}
+      relatedPosts={relatedPosts}
+    />
   );
 }
 
