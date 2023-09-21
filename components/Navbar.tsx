@@ -1,13 +1,5 @@
 import { useEffect } from "react";
-import {
-  Box,
-  Flex,
-  Button,
-  useColorMode,
-  ButtonGroup,
-  Divider,
-  Heading,
-} from "@chakra-ui/react";
+import { Flex, Button, useColorMode, ButtonGroup } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 
@@ -17,7 +9,10 @@ type PageList = {
 };
 
 const pageList: Array<PageList> = [
-  { name: "About", path: "/" },
+  { name: "About", path: "/#about" },
+  { name: "Experience", path: "/#experience" },
+  // { name: "Skills", path: "/#skills" },
+  { name: "Projects", path: "/#projects" },
   { name: "Blog", path: "/blog" },
 ];
 
@@ -33,37 +28,28 @@ const Navbar = (props: { theme: string }) => {
   }, []);
 
   return (
-    <>
-      <Flex
-        alignItems="center"
-        justifyContent="space-between"
-        gap={2}
-        p={3}
-        // To apply backdropBlur, set backdropFilter prop value to "auto"
-        backdropFilter="auto"
-        backdropBlur="sm"
-        zIndex="sticky"
-        sx={{
-          position: "sticky",
-          top: "0",
-        }}
-      >
-        <Box as={NextLink} href="/">
-          <Heading size="sm">yutakusuno.com</Heading>
-        </Box>
-        <ButtonGroup rounded={"md"} variant="ghost" size="sm">
-          {pageList.map((item, idx) => (
-            <Button key={idx} href={item.path} as={NextLink}>
-              {item.name}
-            </Button>
-          ))}
-          <Button onClick={toggleColorMode}>
-            {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+    <Flex
+      position="fixed"
+      as="header"
+      minWidth="100vw"
+      justifyContent="right"
+      p={2}
+      // To apply backdropBlur, set backdropFilter prop value to "auto"
+      backdropFilter="auto"
+      backdropBlur="sm"
+      zIndex={2147483647}
+    >
+      <ButtonGroup rounded={"md"} variant="ghost" size="sm">
+        {pageList.map((item, idx) => (
+          <Button key={idx} href={item.path} as={NextLink}>
+            {item.name}
           </Button>
-        </ButtonGroup>
-      </Flex>
-      <Divider />
-    </>
+        ))}
+        <Button onClick={toggleColorMode}>
+          {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+        </Button>
+      </ButtonGroup>
+    </Flex>
   );
 };
 

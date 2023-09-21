@@ -1,6 +1,4 @@
-import CategoryFilter from "../../components/filter/CategoryFilter";
-import SearchBar from "../../components/filter/SearchBar";
-import PostsGrid from "../../components/posts/PostsGrid";
+import { PostListContainer } from "../../components/posts/custom-container";
 import { getAllPostsFromNotion } from "../../lib/posts";
 import { toUniqueArray } from "../../lib/to-unique-array";
 
@@ -15,10 +13,6 @@ export default async function Blog() {
   ).sort();
 
   return (
-    <>
-      <SearchBar />
-      <CategoryFilter allCategories={allCategories} />
-      <PostsGrid allPosts={allPosts} />
-    </>
+    <PostListContainer allCategories={allCategories} allPosts={allPosts} />
   );
 }

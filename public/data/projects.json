@@ -1,0 +1,44 @@
+[
+  {
+    "category": "OSS",
+    "title": "COVID-19 Dashboard",
+    "description": "Visualize the number and the trend of infections. Customize OSS of 'Code for Japan', operated for 8 months.",
+    "img": "/img/covid19_tokushima.png",
+    "techStack": ["Vue.js", "Nuxt.js", "Jest"],
+    "link": {
+      "github": "https://github.com/yutakusuno/covid19-tokushima"
+    }
+  },
+  {
+    "category": "OSS",
+    "title": "Use a published flag to filter related posts",
+    "description": "I opened a issue and fixed its bug by adding the solution.",
+    "img": "/img/notion_blog_bug_fix.png",
+    "techStack": ["React", "TypeScript", "Next.js", "Notion API"],
+    "link": {
+      "github": "https://github.com/wildcatco/notion-blog/pull/5"
+    }
+  },
+  {
+    "category": "OSS",
+    "title": "Omit constant under Struct",
+    "description": "I Implemented improvements of a ruby library that increase maintainability.",
+    "img": "/img/ruby_reline_refactor.png",
+    "techStack": ["Ruby"],
+    "link": {
+      "github": "https://github.com/ruby/reline/pull/554"
+    }
+  },
+  {
+    "category": "Web",
+    "title": "Portfolio website",
+    "description": "This is my portfolio site.",
+    "img": "/img/portfolio_website.png",
+    "techStack": ["React", "TypeScript", "Next.js", "Notion API"],
+    "devStyle": "personal",
+    "link": {
+      "github": "https://github.com/yutakusuno/portfolio-website",
+      "live": "https://yutakusuno.com"
+    }
+  }
+]
