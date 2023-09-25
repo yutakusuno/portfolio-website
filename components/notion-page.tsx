@@ -6,7 +6,7 @@ import { ExtendedRecordMap } from "notion-types";
 import "react-notion-x/src/styles.css";
 
 import dynamic from "next/dynamic";
-import CategoryList from "./CategoryList";
+import CategoryList from "./category-list";
 import { Post } from "../types/post";
 
 export const NotionProfilePage = ({

@@ -2,11 +2,11 @@
 
 import { Container, Grid, GridItem } from "@chakra-ui/react";
 
-import CategoryFilter from "../../components/filter/CategoryFilter";
-import SearchBar from "../../components/filter/SearchBar";
-import PostsGrid from "../../components/posts/PostsGrid";
-import { NotionPage } from "../../components/NotionPage";
-import RelatedPosts from "../../components/posts/RelatedPosts";
+import CategoryFilter from "../../components/filter/category-filter";
+import SearchBar from "../../components/filter/search-bar";
+import PostsGrid from "./posts-grid";
+import { NotionPage } from "../../components/notion-page";
+import RelatedPosts from "./related-posts";
 import { Post } from "../../types/post";
 import { ExtendedRecordMap } from "notion-types";
 

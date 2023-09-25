@@ -1,7 +1,7 @@
 "use client";
 
 import NextLink from "next/link";
-import CategoryList from "../CategoryList";
+import CategoryList from "../category-list";
 import { Post } from "../../types/post";
 import { Text, Heading, Card, CardBody, Link, Flex } from "@chakra-ui/react";
 

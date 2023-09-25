@@ -1,7 +1,7 @@
 "use client";
 
 import { useRecoilState } from "recoil";
-import Category from "./Category";
+import Category from "./category";
 import { categoriesState } from "../../states/categories";
 import {
   Box,

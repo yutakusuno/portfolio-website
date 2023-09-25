@@ -3,8 +3,8 @@
 import { CacheProvider } from "@chakra-ui/next-js";
 import { ChakraProvider } from "@chakra-ui/react";
 import { ThemeProvider as NextThemeProvider } from "next-themes";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Navbar from "./navbar";
+import Footer from "./footer";
 import { RecoilRoot } from "recoil";
 
 const CustomProviders = (props: {

@@ -1,4 +1,4 @@
-import { Box, Text, Container, Divider } from "@chakra-ui/react";
+import { Box, Text, Container } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 const Footer = () => {

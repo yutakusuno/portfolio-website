@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import PostCard from "./PostCard";
+import PostCard from "./post-card";
 import { Post } from "../../types/post";
 import { Box, Button, Center, Heading, SimpleGrid } from "@chakra-ui/react";
 

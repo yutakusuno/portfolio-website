@@ -21,7 +21,7 @@ import {
 } from "@chakra-ui/react";
 
 import projectsData from "../public/data/projects.json";
-import CategoryList from "./CategoryList";
+import CategoryList from "./category-list";
 
 enum TabMenu {
   All = "All",

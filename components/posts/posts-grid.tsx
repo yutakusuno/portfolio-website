@@ -1,6 +1,6 @@
 "use client";
 
-import PostCard from "./PostCard";
+import PostCard from "./post-card";
 import usePosts from "../../lib/use-posts";
 import { Post } from "../../types/post";
 import { Box, VStack } from "@chakra-ui/react";

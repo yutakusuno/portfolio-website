@@ -1,5 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
-import CustomProviders from "../components/CustomProviders";
+import CustomProviders from "../components/custom-providers";
 import "./globals.css";
 
 const theme = "dark";
