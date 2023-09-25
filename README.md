@@ -30,13 +30,13 @@ NOTION_PAGE_ID=123456789 # usually has 32 digits
 Install dependencies
 
 ```
-yarn
+bun install
 ```
 
 Host the project locally
 
 ```
-yarn dev
+bun run dev
 ```
 
 ## Deploy on Vercel
