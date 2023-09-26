@@ -9,33 +9,6 @@ import dynamic from "next/dynamic";
 import CategoryList from "./category-list";
 import { Post } from "../types/post";
 
-export const NotionProfilePage = ({
-  recordMap,
-  rootPageId,
-}: {
-  recordMap: ExtendedRecordMap;
-  rootPageId?: string;
-}) => {
-  if (!recordMap) return null;
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { colorMode } = useColorMode();
-
-  return (
-    <NotionRenderer
-      recordMap={recordMap}
-      darkMode={colorMode === "dark"}
-      rootPageId={rootPageId}
-      components={{
-        Code,
-        Collection,
-        Equation,
-        Modal,
-        Pdf,
-      }}
-    />
-  );
-};
-
 export const NotionPage = ({
   post,
   recordMap,
