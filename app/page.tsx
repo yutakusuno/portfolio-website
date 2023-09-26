@@ -1,16 +1,16 @@
-import type { NextPage } from "next";
-import Head from "next/head";
+import type { NextPage, Metadata } from "next";
 
 import About from "../components/about";
 import Projects from "../components/projects";
 import Experience from "../components/experience";
 
+export const metadata: Metadata = {
+  title: "Yuta Kusuno Portfolio",
+};
+
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Yuta Kusuno Portfolio</title>
-      </Head>
       <section id="about">
         <About />
       </section>
