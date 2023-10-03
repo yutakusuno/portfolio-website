@@ -17,13 +17,8 @@ export const PostListContainer = (props: {
   const { allCategories, allPosts } = props;
 
   return (
-    <Container
-      minHeight="100vh"
-      justifyContent="center"
-      alignItems="center"
-      display="flex"
-    >
-      <Grid gap={5}>
+    <Container>
+      <Grid pt={20} gap={5}>
         <GridItem colSpan={5}>
           <SearchBar />
           <CategoryFilter allCategories={allCategories} />
@@ -42,18 +37,9 @@ export const PostPageContainer = (props: {
   const { post, recordMap, relatedPosts } = props;
 
   return (
-    <Container
-      minHeight="100vh"
-      justifyContent="center"
-      alignItems="center"
-      display="flex"
-    >
-      <Grid pt={55} gap={5}>
-        <GridItem colSpan={5}>
-          <NotionPage post={post} recordMap={recordMap} />
-          <RelatedPosts posts={relatedPosts} />
-        </GridItem>
-      </Grid>
+    <Container pt={55}>
+      <NotionPage post={post} recordMap={recordMap} />
+      <RelatedPosts posts={relatedPosts} />
     </Container>
   );
 };

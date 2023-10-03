@@ -19,29 +19,27 @@ export const NotionPage = ({
   const { colorMode } = useColorMode();
 
   return (
-    <section>
-      <NotionRenderer
-        recordMap={recordMap}
-        darkMode={colorMode === "dark"}
-        fullPage
-        disableHeader
-        pageHeader={
-          <Flex>
-            <Text fontSize="xs" pr={2}>
-              Posted on {post.date}
-            </Text>
-            <CategoryList categories={post.categories} />
-          </Flex>
-        }
-        components={{
-          Code,
-          Collection,
-          Equation,
-          Modal,
-          Pdf,
-        }}
-      />
-    </section>
+    <NotionRenderer
+      recordMap={recordMap}
+      darkMode={colorMode === "dark"}
+      fullPage
+      disableHeader
+      pageHeader={
+        <Flex>
+          <Text fontSize="xs" pr={2}>
+            Posted on {post.date}
+          </Text>
+          <CategoryList categories={post.categories} />
+        </Flex>
+      }
+      components={{
+        Code,
+        Collection,
+        Equation,
+        Modal,
+        Pdf,
+      }}
+    />
   );
 };
 

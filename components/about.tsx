@@ -6,7 +6,6 @@ import {
   Grid,
   Heading,
   Box,
-  useColorModeValue,
   IconButton,
   GridItem,
   Container,
@@ -39,10 +38,6 @@ const About = () => {
               size="lg"
               fontSize="3xl"
               icon={<BsEnvelopeAtFill />}
-              _hover={{
-                bg: "blue.500",
-                color: useColorModeValue("white", "gray.700"),
-              }}
               isRound
             />
           </Box>
@@ -53,10 +48,6 @@ const About = () => {
               size="lg"
               fontSize="3xl"
               icon={<BsGithub />}
-              _hover={{
-                bg: "blue.500",
-                color: useColorModeValue("white", "gray.700"),
-              }}
               isRound
             />
           </Box>
@@ -70,23 +61,19 @@ const About = () => {
               variant="ghost"
               size="lg"
               icon={<BsLinkedin size="30px" />}
-              _hover={{
-                bg: "blue.500",
-                color: useColorModeValue("white", "gray.700"),
-              }}
               isRound
             />
           </Box>
-          <Box as="a" href="/data/Yuta_Kusuno_Resume.pdf" target="_blank">
+          <Box
+            as="a"
+            href="/data/20231003_YutaKusunoResume.pdf"
+            target="_blank"
+          >
             <IconButton
               aria-label="Resume"
               variant="ghost"
               size="lg"
               icon={<BsFileEarmarkArrowDownFill size="30px" />}
-              _hover={{
-                bg: "blue.500",
-                color: useColorModeValue("white", "gray.700"),
-              }}
               isRound
             />
           </Box>
@@ -96,12 +83,12 @@ const About = () => {
         </GridItem>
         <GridItem colSpan={8}>
           <Text color={"gray.500"}>
-            I am a Full Stack Developer skilled in problem-solving with a strong
-            passion for acquiring technologies. With my adaptability gained in a
-            fast-paced environment, I tackle any challenge or circumstance to
-            arrive at the best solution. I am also involved in contributing to
-            open-source projects and enjoy the web application development
-            process itself, despite being overwhelmed.
+            I am a Full Stack Developer skilled in problem-solving and
+            passionate about creating something functional and useful. With my
+            adaptability gained in a fast-paced environment, I tackle any
+            challenge or circumstance to arrive at the best solution. I am also
+            involved in contributing to open-source projects and enjoy it
+            despite being overwhelmed.
           </Text>
         </GridItem>
       </Grid>

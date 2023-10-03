@@ -25,11 +25,10 @@ const steps = [
     belongTo: "DennoKotsu Inc.",
     jobTitle: "Full Stack Developer",
     descriptions: [
-      "Worked on a dispatch system for taxi companies",
-      "Designed and developed MVC architecture applications and DB table schema design",
-      "Optimized UX by developing RESTful APIs and leveraging third-party APIs",
-      "Led an analytical system team as a player-manager",
-      "NGINX logs collection and analysis using Elasticsearch, AWS Lambda, etc",
+      "Implemented new features using Ruby on Rails, MySQL, and RESTful APIs",
+      "Developed up to 8 MVC architecture web apps from scratch per year",
+      "Automated tasks and slashed delivery lead times using TypeScript and ReactJS",
+      "Optimized NGINX logs collection using Elasticsearch, and AWS Lambda",
     ],
   },
 ];
