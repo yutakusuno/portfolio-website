@@ -86,7 +86,7 @@ const About = () => {
             I am a Full Stack Developer skilled in problem-solving and
             passionate about creating something functional and useful. With my
             adaptability gained in a fast-paced environment, I tackle any
-            challenge or circumstance to arrive at the best solution. I am also
+            challenge or circumstance to find the best solution. I am also
             involved in contributing to open-source projects and enjoy it
             despite being overwhelmed.
           </Text>

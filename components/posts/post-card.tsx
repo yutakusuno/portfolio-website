@@ -6,12 +6,24 @@ import { Post } from "../../types/post";
 import { Text, Heading, Card, CardBody, Link, Flex } from "@chakra-ui/react";
 
 export default function PostCard({
-  post: { slug, title, date, categories },
+  post: { slug, title, date, categories, outerLink },
 }: {
   post: Post;
 }) {
+  const PostList = ({ children }: { children: React.ReactNode }) => {
+    return outerLink ? (
+      <Link as={NextLink} href={outerLink[0][0]} target="_blank">
+        {children}
+      </Link>
+    ) : (
+      <Link as={NextLink} href={`/blog/${slug}`}>
+        {children}
+      </Link>
+    );
+  };
+
   return (
-    <Link as={NextLink} href={`/blog/${slug}`}>
+    <PostList>
       <Card variant="ghost">
         <CardBody>
           <Heading size="md" pb={2}>
@@ -25,6 +37,6 @@ export default function PostCard({
           </Flex>
         </CardBody>
       </Card>
-    </Link>
+    </PostList>
   );
 }

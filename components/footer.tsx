@@ -6,28 +6,26 @@ const Footer = () => {
   return (
     <Container centerContent p={10}>
       <Box>
-        <Box as="a" href="https://github.com/yutakusuno" target="_blank">
-          <IconButton
-            aria-label="github"
-            variant="ghost"
-            size="md"
-            icon={<BsGithub />}
-            isRound
-          />
-        </Box>
-        <Box
-          as="a"
+        <IconButton
+          as={NextLink}
+          href="https://github.com/yutakusuno/"
+          target="_blank"
+          aria-label="github"
+          variant="ghost"
+          size="md"
+          icon={<BsGithub />}
+          isRound
+        />
+        <IconButton
+          as={NextLink}
           href="https://www.linkedin.com/in/yutakusuno/"
           target="_blank"
-        >
-          <IconButton
-            aria-label="linkedin"
-            variant="ghost"
-            size="md"
-            icon={<BsLinkedin />}
-            isRound
-          />
-        </Box>
+          aria-label="linkedin"
+          variant="ghost"
+          size="md"
+          icon={<BsLinkedin />}
+          isRound
+        />
       </Box>
       <Box
         as={NextLink}

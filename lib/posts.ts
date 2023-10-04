@@ -15,7 +15,7 @@ export async function getAllPostsFromNotion() {
   Object.keys(block).forEach((pageId) => {
     if (
       block[pageId].value.type === "page" &&
-      block[pageId].value.properties[propertyMap["Slug"]]
+      block[pageId].value.properties[propertyMap["slug"]]
     ) {
       const { properties, last_edited_time } = block[pageId].value;
 
@@ -28,16 +28,18 @@ export async function getAllPostsFromNotion() {
       const lastEditedAt = dates[0];
 
       const id = pageId;
-      const slug = properties[propertyMap["Slug"]][0][0];
-      const title = properties[propertyMap["Page"]][0][0];
-      const categories = properties[propertyMap["Category"]][0][0].split(",");
-      const date = properties[propertyMap["Date"]][0][1][0][1]["start_date"];
-      const published = properties[propertyMap["Published"]][0][0] === "Yes";
+      const slug = properties[propertyMap["slug"]][0][0];
+      const title = properties[propertyMap["page"]][0][0];
+      const categories = properties[propertyMap["category"]][0][0].split(",");
+      const date = properties[propertyMap["date"]][0][1][0][1]["start_date"];
+      const published = properties[propertyMap["published"]][0][0] === "Yes";
+      const outerLink = properties[propertyMap["outer_link"]];
 
       allPosts.push({
         id,
-        title,
         slug,
+        title,
+        outerLink,
         categories,
         date,
         published,
