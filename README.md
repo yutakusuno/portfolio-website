@@ -3,9 +3,9 @@
 ## Technologies
 
 - React.js
-- Next.js
 - TypeScript
-- Notion API
+- Next.js
+- Notion
 
 ## Quick Start
 
@@ -24,7 +24,8 @@ touch .env.local
 Set your Page ID about your profile page in .env.local
 
 ```bash
-NOTION_PAGE_ID=123456789 # usually has 32 digits
+NOTION_BLOG_DATABASE_ID=xxxxyyyyzzzz
+NOTION_AUTH_TOKEN=xxxxyyyyzzzz
 ```
 
 Install dependencies
@@ -45,4 +46,5 @@ TO deploy on Vercel, set following environment variables
 
 ```
 NOTION_PAGE_ID
+NOTION_AUTH_TOKEN
 ```

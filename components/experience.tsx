@@ -5,10 +5,8 @@ import {
   Container,
   Heading,
   ListItem,
-  Text,
   UnorderedList,
   Step,
-  StepDescription,
   StepIcon,
   StepIndicator,
   StepSeparator,
@@ -21,14 +19,25 @@ import {
 
 const steps = [
   {
-    period: "Apr 2020 - Apr 2023",
+    period: "Feb 2022 - Apr 2023",
     belongTo: "DennoKotsu Inc.",
     jobTitle: "Full Stack Developer",
     descriptions: [
-      "Implemented new features using Ruby on Rails, MySQL, and RESTful APIs",
-      "Developed up to 8 MVC architecture web apps from scratch per year",
-      "Automated tasks and slashed delivery lead times using TypeScript and ReactJS",
-      "Optimized NGINX logs collection using Elasticsearch, and AWS Lambda",
+      "Contributed to an analytics system that harnessed data from a taxi-dispatch platform",
+      "Visualized data using React, TypeScript, Ruby, Elasticsearch, and MySQL",
+      "Enhanced NGINX logs collection process using Python, AWS Lambda, and S3",
+      "Optimized a CI/CD pipeline using GitHub Actions and AWS CodeBuild",
+    ],
+  },
+  {
+    period: "Apr 2020 - Jan 2022",
+    belongTo: "DennoKotsu Inc.",
+    jobTitle: "Full Stack Developer",
+    descriptions: [
+      "Improved a taxi-dispatch system and an Android app for drivers",
+      "Implemented call center and fare calculation features using JavaScript, Ruby, and MySQL",
+      "Established RESTful APIs for seamless integration with the Android app",
+      "Developed map-based reservation web apps and seamlessly integrated their data with the taxi-dispatch system",
     ],
   },
 ];
@@ -48,21 +57,20 @@ const Experience = () => {
           </Heading>
         </Box>
         <Box>
-          <Stepper index={activeStep} orientation="vertical">
+          <Stepper size={"sm"} index={activeStep} orientation="vertical">
             {steps.map((step, index) => (
               <Step key={index}>
                 <StepIndicator>
                   <StepStatus complete={<StepIcon />} />
                 </StepIndicator>
                 <Box>
-                  <Text>{step.period}</Text>
-                  <Box pt={3}>
-                    <StepTitle>{step.jobTitle}</StepTitle>
-                    {step.belongTo}
+                  <Box>
+                    <StepTitle>{step.period}</StepTitle>
+                    {step.jobTitle} | {step.belongTo}
                     <UnorderedList pt={3}>
                       {step.descriptions.map((description, index2) => (
-                        <ListItem key={index2}>
-                          <StepDescription>{description}</StepDescription>
+                        <ListItem key={index2} fontSize={"sm"}>
+                          {description}
                         </ListItem>
                       ))}
                     </UnorderedList>

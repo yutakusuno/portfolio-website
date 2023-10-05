@@ -82,13 +82,13 @@ const About = () => {
           <Avatar zIndex={-1} size="2xl" name="Yuta Kusuno" src={profileImg} />
         </GridItem>
         <GridItem colSpan={8}>
-          <Text color={"gray.500"}>
-            I am a Full Stack Developer skilled in problem-solving and
-            passionate about creating something functional and useful. With my
-            adaptability gained in a fast-paced environment, I tackle any
-            challenge or circumstance to find the best solution. I am also
-            involved in contributing to open-source projects and enjoy it
-            despite being overwhelmed.
+          <Text>
+            I am a Full Stack Developer with strong problem-solving skills and a
+            passion for crafting functional and impactful solutions. I thrive in
+            fast-paced environments, leveraging my adaptability to overcome
+            challenges and deliver the best results. I actively contribute to
+            open-source projects and find immense enjoyment in the process, even
+            when faced with overwhelming tasks.
           </Text>
         </GridItem>
       </Grid>

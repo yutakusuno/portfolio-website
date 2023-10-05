@@ -2,7 +2,7 @@
   {
     "category": "OSS",
     "title": "COVID-19 Dashboard",
-    "description": "Visualize the number and the trend of infections. Customize OSS of 'Code for Japan', operated for 8 months.",
+    "description": "Visualized infection numbers and trends by customizing Code for Japan's OSS",
     "img": "/img/covid19_tokushima.png",
     "techStack": ["Vue.js", "Nuxt.js", "Jest"],
     "link": {
@@ -12,7 +12,7 @@
   {
     "category": "OSS",
     "title": "Use a published flag to filter related posts",
-    "description": "I opened a issue and fixed its bug by adding the solution.",
+    "description": "I opened an issue and fixed the bug by providing the solution.",
     "img": "/img/notion_blog_bug_fix.png",
     "techStack": ["React", "TypeScript", "Next.js", "Notion API"],
     "link": {
@@ -22,7 +22,7 @@
   {
     "category": "OSS",
     "title": "Omit constant under Struct",
-    "description": "I Implemented improvements of a ruby library that increase maintainability.",
+    "description": "I implemented improvements to a Ruby library, enhancing its maintainability.",
     "img": "/img/ruby_reline_refactor.png",
     "techStack": ["Ruby"],
     "link": {
@@ -32,7 +32,7 @@
   {
     "category": "Web",
     "title": "Portfolio website",
-    "description": "This is my portfolio site.",
+    "description": "This is my portfolio website.",
     "img": "/img/portfolio_website.png",
     "techStack": ["React", "TypeScript", "Next.js", "Notion API"],
     "devStyle": "personal",
