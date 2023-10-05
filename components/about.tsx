@@ -29,8 +29,8 @@ const About = () => {
     >
       <Grid gap={5}>
         <GridItem colSpan={5}>
-          <Heading fontSize={"3xl"}>I am Yuta Kusuno</Heading>
-          <Text fontSize={"lg"}>Full Stack Developer</Text>
+          <Heading fontSize={"3xl"}>Yuta Kusuno</Heading>
+          <Text fontSize={"lg"}>Software Developer</Text>
           <Box as="a" href="mailto: yutakusuno51@gmail.com">
             <IconButton
               aria-label="email"
@@ -66,7 +66,7 @@ const About = () => {
           </Box>
           <Box
             as="a"
-            href="/data/20231003_YutaKusunoResume.pdf"
+            href="/data/20231004_YutaKusunoResume.pdf"
             target="_blank"
           >
             <IconButton
@@ -83,12 +83,11 @@ const About = () => {
         </GridItem>
         <GridItem colSpan={8}>
           <Text>
-            I am a Full Stack Developer with strong problem-solving skills and a
-            passion for crafting functional and impactful solutions. I thrive in
-            fast-paced environments, leveraging my adaptability to overcome
-            challenges and deliver the best results. I actively contribute to
-            open-source projects and find immense enjoyment in the process, even
-            when faced with overwhelming tasks.
+            I am a Software Developer with a passion for crafting functional and
+            impactful solutions. I excel in fast-paced environments, using my
+            adaptability to overcome challenges and deliver the best results.
+            Contributing to open-source projects brings me immense enjoyment,
+            even when facing overwhelming tasks.
           </Text>
         </GridItem>
       </Grid>

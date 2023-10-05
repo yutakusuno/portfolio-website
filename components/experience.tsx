@@ -13,6 +13,7 @@ import {
   StepStatus,
   StepTitle,
   Stepper,
+  Text,
   useSteps,
   SimpleGrid,
 } from "@chakra-ui/react";
@@ -57,24 +58,24 @@ const Experience = () => {
           </Heading>
         </Box>
         <Box>
-          <Stepper size={"sm"} index={activeStep} orientation="vertical">
+          <Stepper size={"xs"} index={activeStep} orientation="vertical">
             {steps.map((step, index) => (
               <Step key={index}>
-                <StepIndicator>
-                  <StepStatus complete={<StepIcon />} />
-                </StepIndicator>
+                <StepIndicator />
                 <Box>
-                  <Box>
-                    <StepTitle>{step.period}</StepTitle>
+                  <StepTitle>
+                    <Text color={"gray.500"}>{step.period}</Text>
+                  </StepTitle>
+                  <Text as="b">
                     {step.jobTitle} | {step.belongTo}
-                    <UnorderedList pt={3}>
-                      {step.descriptions.map((description, index2) => (
-                        <ListItem key={index2} fontSize={"sm"}>
-                          {description}
-                        </ListItem>
-                      ))}
-                    </UnorderedList>
-                  </Box>
+                  </Text>
+                  <UnorderedList pt={3}>
+                    {step.descriptions.map((description, index2) => (
+                      <ListItem key={index2} fontSize={"sm"}>
+                        {description}
+                      </ListItem>
+                    ))}
+                  </UnorderedList>
                 </Box>
                 <StepSeparator />
               </Step>
