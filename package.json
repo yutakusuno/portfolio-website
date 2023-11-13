@@ -22,7 +22,7 @@
     "eslint": "8.53.0",
     "eslint-config-next": "14.0.1",
     "framer-motion": "^10.16.4",
-    "next": "14.0.1",
+    "next": "14.0.2",
     "next-themes": "^0.2.1",
     "notion-client": "^6.16.0",
     "notion-types": "^6.16.0",
