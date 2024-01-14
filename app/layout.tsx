@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import CustomProviders from "../components/custom-providers";
 import "./globals.css";
 
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body>
         <CustomProviders theme={theme}>{children}</CustomProviders>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

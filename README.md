@@ -44,7 +44,7 @@ The \*\_ID is displayed on your notion page. Please copy the id in the red frame
 
 ![page_id](public/img/readme/page_id.png)
 
-The auth token is displayed on the Application tab of your Google Chrome. As you can see, the menu on the left side has the Storage section. Please go ahead, Storage > Cookies > https://www.notion.so. Then, click the token_v2, which is underlined. And copy your token in the red frame and paste to your NOTION_AUTH_TOKEN.
+The auth token is displayed on the Application tab of your Google Chrome. As you can see, the menu on the left side has the Storage section. Please go ahead, Storage > Cookies > https://www.notion.so. Then, click the token_v2, which is underlined. And copy your token in the red frame and paste it to your NOTION_AUTH_TOKEN.
 
 ![auth_token](public/img/readme/auth_token.png)
 
