@@ -1,7 +1,8 @@
 import { NotionAPI } from "notion-client";
+import { notionAuthToken } from "./config";
 
 export const notion = new NotionAPI({
-  authToken: process.env.NOTION_AUTH_TOKEN,
+  authToken: notionAuthToken,
 });
 
 export function getRecordMap(id: string) {

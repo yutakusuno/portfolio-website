@@ -1,8 +1,8 @@
 import type { NextPage, Metadata } from "next";
 
-import About from "../components/about";
+import AboutV2 from "../components/about-v2";
+import ExperienceV2 from "../components/experience-v2";
 import Projects from "../components/projects";
-import Experience from "../components/experience";
 
 export const metadata: Metadata = {
   title: "Yuta Kusuno Portfolio",
@@ -12,14 +12,11 @@ const Home: NextPage = () => {
   return (
     <>
       <section id="about">
-        <About />
+        <AboutV2 />
       </section>
       <section id="experience">
-        <Experience />
+        <ExperienceV2 />
       </section>
-      {/* <section id="skills">
-        <Skills />
-      </section> */}
       <section id="projects">
         <Projects />
       </section>

@@ -51,7 +51,7 @@ const Projects: NextPage = () => {
 
   return (
     <Container minHeight="80vh" pt={50}>
-      <Heading fontSize={"3xl"} pb={10}>
+      <Heading fontSize={"2xl"} pb={10}>
         Projects
       </Heading>
 
