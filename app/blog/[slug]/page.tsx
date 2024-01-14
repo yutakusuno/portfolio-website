@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
 import { getRecordMap } from "../../../lib/notion";
 import { getAllPostsFromNotion } from "../../../lib/posts";
 import { Post } from "../../../types/post";

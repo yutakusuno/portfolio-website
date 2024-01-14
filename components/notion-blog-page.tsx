@@ -1,15 +1,15 @@
 "use client";
 
-import { Flex, Text, useColorMode } from "@chakra-ui/react";
+import dynamic from "next/dynamic";
 import { NotionRenderer } from "react-notion-x";
 import { ExtendedRecordMap } from "notion-types";
+import { Flex, Text, useColorMode } from "@chakra-ui/react";
 import "react-notion-x/src/styles.css";
 
-import dynamic from "next/dynamic";
 import CategoryList from "./category-list";
 import { Post } from "../types/post";
 
-export const NotionPage = ({
+export const NotionBlogPage = ({
   post,
   recordMap,
 }: {

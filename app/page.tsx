@@ -1,7 +1,7 @@
 import type { NextPage, Metadata } from "next";
 
-import AboutV2 from "../components/about-v2";
-import ExperienceV2 from "../components/experience-v2";
+import About from "../components/about";
+import Experience from "../components/experience";
 import Projects from "../components/projects";
 
 export const metadata: Metadata = {
@@ -12,10 +12,10 @@ const Home: NextPage = () => {
   return (
     <>
       <section id="about">
-        <AboutV2 />
+        <About />
       </section>
       <section id="experience">
-        <ExperienceV2 />
+        <Experience />
       </section>
       <section id="projects">
         <Projects />

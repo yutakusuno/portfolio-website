@@ -1,14 +1,14 @@
 "use client";
 
+import { ExtendedRecordMap } from "notion-types";
 import { Container, Grid, GridItem } from "@chakra-ui/react";
 
 import CategoryFilter from "../../components/filter/category-filter";
 import SearchBar from "../../components/filter/search-bar";
 import PostsGrid from "./posts-grid";
-import { NotionPage } from "../../components/notion-page";
+import { NotionBlogPage } from "../notion-blog-page";
 import RelatedPosts from "./related-posts";
 import { Post } from "../../types/post";
-import { ExtendedRecordMap } from "notion-types";
 
 export const PostListContainer = (props: {
   allCategories: string[];
@@ -38,7 +38,7 @@ export const PostPageContainer = (props: {
 
   return (
     <Container pt={55}>
-      <NotionPage post={post} recordMap={recordMap} />
+      <NotionBlogPage post={post} recordMap={recordMap} />
       <RelatedPosts posts={relatedPosts} />
     </Container>
   );

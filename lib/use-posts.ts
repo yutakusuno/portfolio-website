@@ -1,5 +1,4 @@
 import { useEffect, useMemo } from "react";
-
 import { useRecoilState, useRecoilValue } from "recoil";
 
 import { categoriesState } from "../states/categories";
