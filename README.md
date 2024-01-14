@@ -2,18 +2,28 @@
 
 ## Technologies
 
-- React.js
 - TypeScript
-- Next.js
+- Next.js 13
 - Notion
 
 ## Quick Start
 
-Clone this project locally and move to the root directory
+### Clone
+
+Clone this project locally and move to the project root directory
 
 ```
+git clone git@github.com:yutakusuno/portfolio-website.git
 cd portfolio-website
 ```
+
+### Install dependencies
+
+```
+yarn install
+```
+
+### Environment variables
 
 Create .env.local in the root directory
 
@@ -21,20 +31,24 @@ Create .env.local in the root directory
 touch .env.local
 ```
 
-Set your Page ID about your profile page in .env.local
+Set the following environment variables with yours to .env.local
 
-```bash
+```
 NOTION_BLOG_DATABASE_ID=xxxxyyyyzzzz
+NOTION_ABOUT_PAGE_ID=xxxxyyyyzzzz
+NOTION_EXPERIENCE_PAGE_ID=xxxxyyyyzzzz
 NOTION_AUTH_TOKEN=xxxxyyyyzzzz
 ```
 
-Install dependencies
+The \*\_ID is displayed on your notion page. Please copy the id in the red frame and paste it to the \*\_ID
 
-```
-yarn
-```
+![page_id](public/img/readme/page_id.png)
 
-Host the project locally
+The auth token is displayed on the Application tab of your Google Chrome. As you can see, the menu on the left side has the Storage section. Please go ahead, Storage > Cookies > https://www.notion.so. Then, click the token_v2, which is underlined. And copy your token in the red frame and paste to your NOTION_AUTH_TOKEN.
+
+![auth_token](public/img/readme/auth_token.png)
+
+### Host the project locally
 
 ```
 yarn dev
@@ -42,9 +56,11 @@ yarn dev
 
 ## Deploy on Vercel
 
-TO deploy on Vercel, set following environment variables
+Before deploying on Vercel, please set the following environment variables on the vercel dashboard
 
 ```
-NOTION_PAGE_ID
+NOTION_BLOG_DATABASE_ID
+NOTION_ABOUT_PAGE_ID
+NOTION_EXPERIENCE_PAGE_ID
 NOTION_AUTH_TOKEN
 ```
