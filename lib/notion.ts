@@ -1,5 +1,5 @@
-import { NotionAPI } from "notion-client";
-import { notionAuthToken } from "./config";
+import { NotionAPI } from 'notion-client';
+import { notionAuthToken } from './config';
 
 export const notion = new NotionAPI({
   authToken: notionAuthToken,

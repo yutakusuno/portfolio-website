@@ -1,9 +1,9 @@
-import { getRecordMap } from "./notion";
-import { Post } from "../types/post";
-import { notionBlogDatabaseId } from "./config";
+import { getRecordMap } from './notion';
+import { Post } from '../types/post';
+import { notionBlogDatabaseId } from './config';
 
 export async function getAllPostsFromNotion() {
-  const allPosts: Post[] = [];
+  const posts: Post[] = [];
   const recordMap = await getRecordMap(notionBlogDatabaseId!);
   const { block, collection } = recordMap;
   const schema = Object.values(collection)[0].value.schema;
@@ -15,8 +15,8 @@ export async function getAllPostsFromNotion() {
 
   Object.keys(block).forEach((pageId) => {
     if (
-      block[pageId].value.type === "page" &&
-      block[pageId].value.properties[propertyMap["slug"]]
+      block[pageId].value.type === 'page' &&
+      block[pageId].value.properties[propertyMap['slug']]
     ) {
       const { properties, last_edited_time } = block[pageId].value;
 
@@ -29,14 +29,14 @@ export async function getAllPostsFromNotion() {
       const lastEditedAt = dates[0];
 
       const id = pageId;
-      const slug = properties[propertyMap["slug"]][0][0];
-      const title = properties[propertyMap["page"]][0][0];
-      const categories = properties[propertyMap["category"]][0][0].split(",");
-      const date = properties[propertyMap["date"]][0][1][0][1]["start_date"];
-      const published = properties[propertyMap["published"]][0][0] === "Yes";
-      const outerLink = properties[propertyMap["outer_link"]];
+      const slug = properties[propertyMap['slug']][0][0];
+      const title = properties[propertyMap['page']][0][0];
+      const categories = properties[propertyMap['category']][0][0].split(',');
+      const date = properties[propertyMap['date']][0][1][0][1]['start_date'];
+      const published = properties[propertyMap['published']][0][0] === 'Yes';
+      const outerLink = properties[propertyMap['outer_link']];
 
-      allPosts.push({
+      posts.push({
         id,
         slug,
         title,
@@ -49,5 +49,5 @@ export async function getAllPostsFromNotion() {
     }
   });
 
-  return allPosts;
+  return posts;
 }
