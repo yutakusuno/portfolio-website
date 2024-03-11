@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Box, Button, Center, Heading, SimpleGrid } from '@chakra-ui/react';
 
 import PostCard from './post-card';
-import { Post } from '../../types/post';
+import type { Post } from '../../types/post';
 
 const INITIAL_NUM_POSTS = 3;
 const ADDITIONAL_NUM_POSTS = 3;
@@ -21,7 +21,7 @@ const RelatedPosts = ({ posts }: { posts: Post[] }) => {
   return (
     <SimpleGrid mt={10} mb={10}>
       <Heading fontSize='3xl'>Related Posts</Heading>
-      {posts.slice(0, numPosts).map((post) => (
+      {posts.slice(0, numPosts).map((post: Post) => (
         <Box key={post.slug}>
           <PostCard post={post} />
         </Box>

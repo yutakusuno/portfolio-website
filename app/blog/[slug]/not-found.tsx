@@ -1,13 +1,15 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-export default function NotFound() {
+const NotFound = () => {
   return (
     <div>
       <h2>Post Not Found</h2>
-      <Link href="/blog">
+      <Link href='/blog'>
         <span>&larr;</span>
         <span>Go to list page</span>
       </Link>
     </div>
   );
-}
+};
+
+export default NotFound;

@@ -7,7 +7,7 @@ import { ThemeProvider as NextThemeProvider } from 'next-themes';
 import Navbar from './navbar';
 import Footer from './footer';
 
-const CustomProviders = (props: {
+const CustomProvider = (props: {
   theme: string;
   children: React.ReactNode;
 }) => {
@@ -26,4 +26,4 @@ const CustomProviders = (props: {
   );
 };
 
-export default CustomProviders;
+export default CustomProvider;

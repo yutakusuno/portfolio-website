@@ -1,10 +1,10 @@
-import { PostListContainer } from '../../components/posts/custom-container';
-import { getAllPostsFromNotion } from '../../lib/posts';
+import PostList from '../../components/posts/post-list';
+import { getPostsFromNotion } from '../../lib/posts';
 
 const Blog = async () => {
-  const posts = await getAllPostsFromNotion();
+  const posts = await getPostsFromNotion();
 
-  return <PostListContainer posts={posts} />;
+  return <PostList posts={posts} />;
 };
 
 export default Blog;

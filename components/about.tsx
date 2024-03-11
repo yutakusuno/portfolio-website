@@ -1,8 +1,8 @@
-import { Container } from "@chakra-ui/react";
+import { Container } from '@chakra-ui/react';
 
-import { NotionProfilePage } from "./notion-profile-page";
-import { notion } from "../lib/notion";
-import { notionAboutPageId } from "../lib/config";
+import { NotionProfilePage } from './notion/notion-profile-page';
+import { notion } from '../lib/notion';
+import { notionAboutPageId } from '../lib/config';
 
 const About = async () => {
   if (!notionAboutPageId) return null;
@@ -12,10 +12,10 @@ const About = async () => {
 
   return (
     <Container
-      minHeight="100vh"
-      justifyContent="center"
-      alignItems="center"
-      display="flex"
+      minHeight='100vh'
+      justifyContent='center'
+      alignItems='center'
+      display='flex'
       pt={50}
     >
       <NotionProfilePage recordMap={recordMap} rootPageId={rootNotionPageId} />

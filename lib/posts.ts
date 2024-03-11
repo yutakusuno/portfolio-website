@@ -1,8 +1,8 @@
 import { getRecordMap } from './notion';
-import { Post } from '../types/post';
 import { notionBlogDatabaseId } from './config';
+import type { Post } from '../types/post';
 
-export async function getAllPostsFromNotion() {
+const getPostsFromNotion = async () => {
   const posts: Post[] = [];
   const recordMap = await getRecordMap(notionBlogDatabaseId!);
   const { block, collection } = recordMap;
@@ -50,4 +50,6 @@ export async function getAllPostsFromNotion() {
   });
 
   return posts;
-}
+};
+
+export { getPostsFromNotion };

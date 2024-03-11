@@ -5,7 +5,6 @@ import { Box, VStack } from '@chakra-ui/react';
 
 import PostCard from './post-card';
 import { CategoryContext } from '../contexts/category-context';
-import { toUniqueArray } from '../../lib/to-unique-array';
 import type { Post } from '../../types/post';
 
 const PostsGrid = ({ posts, query }: { posts: Post[]; query: string }) => {
@@ -13,7 +12,7 @@ const PostsGrid = ({ posts, query }: { posts: Post[]; query: string }) => {
 
   const filteredPosts = useMemo(
     () =>
-      posts.filter((post) => {
+      posts.filter((post: Post) => {
         if (!post.published) return false;
 
         if (
@@ -24,7 +23,7 @@ const PostsGrid = ({ posts, query }: { posts: Post[]; query: string }) => {
         }
 
         if (selectedCategories.length > 0) {
-          const isCategoryMatch = selectedCategories.every((category) =>
+          const isCategoryMatch = selectedCategories.every((category: string) =>
             post.categories.includes(category)
           );
           if (!isCategoryMatch) return false;
@@ -36,19 +35,21 @@ const PostsGrid = ({ posts, query }: { posts: Post[]; query: string }) => {
     [posts, selectedCategories, query]
   );
 
-  filteredPosts.sort((postA, postB) => (postA.date > postB.date ? -1 : 1));
+  filteredPosts.sort((postA: Post, postB: Post) =>
+    postA.date > postB.date ? -1 : 1
+  );
 
   // Update categories in context
   useEffect(() => {
-    setCategories(
-      toUniqueArray(filteredPosts.map((post) => post.categories).flat())
-    );
+    setCategories([
+      ...new Set(filteredPosts.map((post: Post) => post.categories).flat(1)),
+    ]);
   }, [filteredPosts, setCategories]);
 
   return (
     <VStack align='stretch'>
       {filteredPosts.length ? (
-        filteredPosts.map((post) => (
+        filteredPosts.map((post: Post) => (
           <Box key={post.slug}>
             <PostCard post={post} />
           </Box>

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import type { NextPage } from "next";
+import { useState } from 'react';
+import type { NextPage } from 'next';
 import {
   Button,
   ButtonGroup,
@@ -18,16 +18,16 @@ import {
   Text,
   Tabs,
   SimpleGrid,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-import projectsData from "../public/data/projects.json";
-import CategoryList from "./category-list";
+import projectsData from '../public/data/projects.json';
+import CategoryList from './filters/category-list';
 
 enum TabMenu {
-  All = "All",
-  Web = "Web",
-  Mobile = "Mobile",
-  OSS = "OSS",
+  All = 'All',
+  Web = 'Web',
+  Mobile = 'Mobile',
+  OSS = 'OSS',
 }
 
 const Projects: NextPage = () => {
@@ -50,16 +50,16 @@ const Projects: NextPage = () => {
   };
 
   return (
-    <Container minHeight="80vh" pt={50}>
-      <Heading fontSize={"2xl"} pb={10}>
+    <Container minHeight='80vh' pt={50}>
+      <Heading fontSize={'2xl'} pb={10}>
         Projects
       </Heading>
 
-      <Tabs size="sm" isFitted variant="soft-rounded" mb={5}>
+      <Tabs size='sm' isFitted variant='soft-rounded' mb={5}>
         <TabList>
           {Object.keys(TabMenu).map((menu, idx) => {
             return (
-              <Tab as={"button"} key={idx} onClick={() => filterProjects(menu)}>
+              <Tab as={'button'} key={idx} onClick={() => filterProjects(menu)}>
                 {menu}
               </Tab>
             );
@@ -71,16 +71,16 @@ const Projects: NextPage = () => {
 
         {projectsList.map((project, idx) => {
           return (
-            <Card key={idx} variant="outline" maxWidth={"xs"}>
+            <Card key={idx} variant='outline' maxWidth={'xs'}>
               <CardBody>
                 <Image
                   src={project.img}
-                  alt="Green double couch with wooden legs"
-                  borderRadius="lg"
+                  alt='Green double couch with wooden legs'
+                  borderRadius='lg'
                 />
-                <Stack mt="6" spacing="3">
-                  <Heading size="md">{project.title}</Heading>
-                  <Text fontSize="sm">{project.description}</Text>
+                <Stack mt='6' spacing='3'>
+                  <Heading size='md'>{project.title}</Heading>
+                  <Text fontSize='sm'>{project.description}</Text>
                   <CategoryList
                     categories={[project.category].concat(project.techStack)}
                   />
@@ -88,14 +88,14 @@ const Projects: NextPage = () => {
               </CardBody>
               <Divider />
               <CardFooter>
-                <ButtonGroup spacing="2" size={"sm"}>
+                <ButtonGroup spacing='2' size={'sm'}>
                   {project.link.github && (
-                    <Button as={"a"} href={project.link.github} target="_blank">
+                    <Button as={'a'} href={project.link.github} target='_blank'>
                       GitHub
                     </Button>
                   )}
                   {project.link.live && (
-                    <Button as={"a"} href={project.link.live} target="_blank">
+                    <Button as={'a'} href={project.link.live} target='_blank'>
                       Website
                     </Button>
                   )}

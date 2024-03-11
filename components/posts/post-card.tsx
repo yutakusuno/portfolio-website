@@ -3,8 +3,8 @@
 import NextLink from 'next/link';
 import { Text, Heading, Card, CardBody, Link, Flex } from '@chakra-ui/react';
 
-import CategoryList from '../category-list';
-import { Post } from '../../types/post';
+import CategoryList from '../filters/category-list';
+import type { Post } from '../../types/post';
 
 const PostCard = ({
   post: { slug, title, date, categories, outerLink },

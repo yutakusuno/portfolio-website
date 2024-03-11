@@ -1,20 +1,16 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import { notFound } from "next/navigation";
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
-import { getRecordMap } from "../../../lib/notion";
-import { getAllPostsFromNotion } from "../../../lib/posts";
-import { Post } from "../../../types/post";
-import { PostPageContainer } from "../../../components/posts/custom-container";
+import { getRecordMap } from '../../../lib/notion';
+import { getPostsFromNotion } from '../../../lib/posts';
+import PostView from '../../../components/posts/post-view';
+import type { Post } from '../../../types/post';
 
-export default async function PostPage({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) {
-  const allPosts = await getAllPostsFromNotion();
+const PostPage = async ({ params: { slug } }: { params: { slug: string } }) => {
+  const posts = await getPostsFromNotion();
 
-  const post = allPosts.find((p) => p.slug === slug);
+  const post = posts.find((p) => p.slug === slug);
   if (!post) {
     return notFound();
   }
@@ -23,7 +19,7 @@ export default async function PostPage({
     return (
       <article data-revalidated-at={new Date().getTime()}>
         <h2>Post Not Found</h2>
-        <Link href="/blog">
+        <Link href='/blog'>
           <span>&larr;</span>
           <span>Go to list page</span>
         </Link>
@@ -31,7 +27,7 @@ export default async function PostPage({
     );
   }
 
-  const relatedPosts: Post[] = allPosts.filter(
+  const relatedPosts: Post[] = posts.filter(
     (p) =>
       p.slug !== slug &&
       p.published &&
@@ -41,33 +37,31 @@ export default async function PostPage({
   const recordMap = await getRecordMap(post.id);
 
   return (
-    <PostPageContainer
-      post={post}
-      recordMap={recordMap}
-      relatedPosts={relatedPosts}
-    />
+    <PostView post={post} recordMap={recordMap} relatedPosts={relatedPosts} />
   );
-}
+};
 
-export async function generateStaticParams() {
-  const allPosts = await getAllPostsFromNotion();
+export const generateStaticParams = async () => {
+  const posts = await getPostsFromNotion();
 
-  return allPosts.map((post) => ({
+  return posts.map((post) => ({
     slug: post.slug,
   }));
-}
+};
 
-export async function generateMetadata({
+export const generateMetadata = async ({
   params: { slug },
 }: {
   params: { slug: string };
-}): Promise<Metadata> {
-  const allPosts = await getAllPostsFromNotion();
-  const post = allPosts.find((p) => p.slug === slug);
+}): Promise<Metadata> => {
+  const posts = await getPostsFromNotion();
+  const post = posts.find((p) => p.slug === slug);
 
   return post
     ? {
         title: post.title,
       }
     : {};
-}
+};
+
+export default PostPage;
