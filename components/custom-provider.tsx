@@ -7,17 +7,12 @@ import { ThemeProvider as NextThemeProvider } from 'next-themes';
 import Navbar from './navbar';
 import Footer from './footer';
 
-const CustomProvider = (props: {
-  theme: string;
-  children: React.ReactNode;
-}) => {
-  const { theme, children } = props;
-
+const CustomProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <CacheProvider>
       <ChakraProvider>
-        <NextThemeProvider attribute='class' defaultTheme={theme}>
-          <Navbar theme={theme} />
+        <NextThemeProvider attribute='class' defaultTheme={'dark'}>
+          <Navbar />
           {children}
           <Footer />
         </NextThemeProvider>

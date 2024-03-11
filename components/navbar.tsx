@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Flex, Button, useColorMode, ButtonGroup } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link';
@@ -15,16 +14,8 @@ const pageList: Array<PageList> = [
   { name: 'Blog', path: '/blog' },
 ];
 
-const Navbar = (props: { theme: string }) => {
-  const { theme } = props;
+const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-
-  useEffect(() => {
-    // NOTE: This is a hack to adjust theme between Chakra UI and next-themes
-    // If the default theme set dark with Chakra UI, color Mode Flash Issue is occurred https://chakra-ui.com/docs/styled-system/color-mode#color-mode-flash-issue
-    if (colorMode !== theme) toggleColorMode();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <Flex

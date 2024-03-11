@@ -7,7 +7,7 @@ import { Flex, Text, useColorMode } from '@chakra-ui/react';
 import 'react-notion-x/src/styles.css';
 
 import CategoryList from '../filters/category-list';
-import { Post } from '../../types/post';
+import type { Post } from '../../types/post';
 
 export const NotionBlogPage = ({
   post,
