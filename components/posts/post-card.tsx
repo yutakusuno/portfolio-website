@@ -1,18 +1,19 @@
-"use client";
+'use client';
 
-import NextLink from "next/link";
-import CategoryList from "../category-list";
-import { Post } from "../../types/post";
-import { Text, Heading, Card, CardBody, Link, Flex } from "@chakra-ui/react";
+import NextLink from 'next/link';
+import { Text, Heading, Card, CardBody, Link, Flex } from '@chakra-ui/react';
 
-export default function PostCard({
+import CategoryList from '../category-list';
+import { Post } from '../../types/post';
+
+const PostCard = ({
   post: { slug, title, date, categories, outerLink },
 }: {
   post: Post;
-}) {
+}) => {
   const PostList = ({ children }: { children: React.ReactNode }) => {
     return outerLink ? (
-      <Link as={NextLink} href={outerLink[0][0]} target="_blank">
+      <Link as={NextLink} href={outerLink[0][0]} target='_blank'>
         {children}
       </Link>
     ) : (
@@ -24,14 +25,14 @@ export default function PostCard({
 
   return (
     <PostList>
-      <Card variant="ghost">
+      <Card variant='ghost'>
         <CardBody>
-          <Heading size="md" pb={2}>
+          <Heading size='md' pb={2}>
             {title}
           </Heading>
-          <Flex justifyContent="space-between">
+          <Flex justifyContent='space-between'>
             <CategoryList categories={categories} />
-            <Text fontSize="sm" color="grey">
+            <Text fontSize='sm' color='grey'>
               {date}
             </Text>
           </Flex>
@@ -39,4 +40,6 @@ export default function PostCard({
       </Card>
     </PostList>
   );
-}
+};
+
+export default PostCard;

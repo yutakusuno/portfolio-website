@@ -1,18 +1,10 @@
-import { PostListContainer } from "../../components/posts/custom-container";
-import { getAllPostsFromNotion } from "../../lib/posts";
-import { toUniqueArray } from "../../lib/to-unique-array";
+import { PostListContainer } from '../../components/posts/custom-container';
+import { getAllPostsFromNotion } from '../../lib/posts';
 
-export default async function Blog() {
-  const allPosts = await getAllPostsFromNotion();
+const Blog = async () => {
+  const posts = await getAllPostsFromNotion();
 
-  const allCategories = toUniqueArray(
-    allPosts
-      .filter((post) => post.published)
-      .map((post) => post.categories)
-      .flat()
-  ).sort();
+  return <PostListContainer posts={posts} />;
+};
 
-  return (
-    <PostListContainer allCategories={allCategories} allPosts={allPosts} />
-  );
-}
+export default Blog;
