@@ -16,7 +16,7 @@
     "@emotion/styled": "^11.11.0",
     "@types/node": "20.11.25",
     "@types/react": "18.2.64",
-    "@types/react-dom": "18.2.18",
+    "@types/react-dom": "18.2.24",
     "@vercel/analytics": "^1.1.3",
     "@vercel/speed-insights": "^1.0.9",
     "date-fns": "^3.3.1",
