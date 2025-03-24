@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://yutakusuno.notion.site/Hi-4eb10db869894cb6b32f17532215b59d",
+      "permanent": true
+    }
+  ]
+}
