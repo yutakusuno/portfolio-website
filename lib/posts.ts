@@ -14,6 +14,8 @@ const getPostsFromNotion = async () => {
   });
 
   Object.keys(block).forEach((pageId) => {
+    if (!block[pageId].value) return;
+
     if (
       block[pageId].value.type === 'page' &&
       block[pageId].value.properties[propertyMap['slug']]
